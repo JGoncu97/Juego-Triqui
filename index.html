@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tablero de Triqui</title>
+<style>
+    html {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #3498db;
+    }
+    .board {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+        gap: 2px;
+        background-color: white;
+        padding: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .cell {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #3498db;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .cell:hover {
+        background-color: #3498db;
+        box-shadow: 0 0 5px #0653f8;
+    }
+    .result {
+        width: 19rem;
+        text-align: center;
+    }
+    .reset-button, .symbol-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+</head>
+<body>
+    <div class="symbol-selection">
+        <button class="symbol-button" onclick="selectSymbol('X')">Jugar con X</button>
+        <button class="symbol-button" onclick="selectSymbol('O')">Jugar con O</button>
+    </div>
+    <br>
+  <div class="board">
+      <div id="cell-0-0" class="cell"></div>
+      <div id="cell-0-1" class="cell"></div>
+      <div id="cell-0-2" class="cell"></div>
+      <div id="cell-1-0" class="cell"></div>
+      <div id="cell-1-1" class="cell"></div>
+      <div id="cell-1-2" class="cell"></div>
+      <div id="cell-2-0" class="cell"></div>
+      <div id="cell-2-1" class="cell"></div>
+      <div id="cell-2-2" class="cell"></div>
+  </div>
+  <button class="reset-button" onclick="resetGame()">Reiniciar Juego</button>
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="app.js"></script>
+</body>
+</html>
